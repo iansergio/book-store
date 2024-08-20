@@ -14,20 +14,20 @@ public class Main {
         // Inserir autor
 //        autor.setNome("");
 //        autor.setNacionalidade("");
-//        daoAutor.inserirAutor(autor);
+//        daoAutor.inserir(autor);
 
         // Atualizar autor
 //        autor.setNome("");
 //        autor.setNacionalidade("");
 //        autor.setId();
-//        daoAutor.atualizarAutor(autor);
+//        daoAutor.atualizar(autor);
 
 //        // Excluir autor
 //        autor.setId();
-//        daoAutor.excluirAutor(autor);
+//        daoAutor.excluir(autor);
 
         // Listar autores
-        for(Autor a : daoAutor.listarAutores()){
+        for(Autor a : daoAutor.listar()){
             System.out.println(a);
         }
 
@@ -52,7 +52,7 @@ public class Main {
 //        daoLivro.excluirLivro(livro);
 
         // Listar livros
-        for(Livro l : daoLivro.listarLivros()){
+        for(Livro l : daoLivro.listar()){
             System.out.println(l);
         }
 
