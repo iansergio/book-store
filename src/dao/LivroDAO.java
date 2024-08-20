@@ -1,6 +1,5 @@
 package dao;
 
-import entities.Autor;
 import entities.Livro;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -11,7 +10,7 @@ import java.util.List;
 
 public class LivroDAO extends BancoDAO{
 
-    public void inserirLivro(Livro livro) {
+    public void inserir(Livro livro) {
         String sql = """
                 INSERT INTO livro(titulo, ano_publicacao, id_autor)
                 VALUES(?, ?, ?)
@@ -28,7 +27,7 @@ public class LivroDAO extends BancoDAO{
         }
     }
 
-    public void atualizarLivro(Livro livro) {
+    public void atualizar(Livro livro) {
         String sql = """
                 UPDATE livro 
                 SET titulo = ?, ano_publicacao = ?, id_autor = ? WHERE id_livro = ? 
@@ -46,7 +45,7 @@ public class LivroDAO extends BancoDAO{
         }
     }
 
-    public void excluirLivro(Livro livro) {
+    public void excluir(Livro livro) {
         String sql = """
                 DELETE FROM livro WHERE id_livro = ?
                 """;
@@ -60,7 +59,7 @@ public class LivroDAO extends BancoDAO{
         }
     }
 
-    public List<Livro> listarLivros(){
+    public List<Livro> listar(){
         List<Livro> lista = new ArrayList<>();
         String sql = """
             SELECT id_livro, titulo, ano_publicacao, id_autor FROM livro;

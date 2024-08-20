@@ -10,7 +10,7 @@ import java.util.List;
 
 public class AutorDAO extends BancoDAO{
 
-    public void inserirAutor(Autor autor){
+    public void inserir(Autor autor){
         String sql = """
                 INSERT INTO autor(nome, nacionalidade)
                 VALUES(?, ?)
@@ -26,7 +26,7 @@ public class AutorDAO extends BancoDAO{
         }
     }
 
-    public void atualizarAutor(Autor autor) {
+    public void atualizar(Autor autor) {
         String sql = """
                 UPDATE autor SET nome = ?, nacionalidade = ? WHERE id_autor = ?
                 """;
@@ -42,7 +42,7 @@ public class AutorDAO extends BancoDAO{
         }
     }
 
-    public void excluirAutor(Autor autor) {
+    public void excluir(Autor autor) {
         String sql = """
                 DELETE FROM autor WHERE id_autor = ?
                 """;
@@ -57,7 +57,7 @@ public class AutorDAO extends BancoDAO{
     }
 
 
-    public List<Autor> listarAutores(){
+    public List<Autor> listar(){
         List<Autor> lista = new ArrayList<>();
         String sql = """
             SELECT id_autor, nome, nacionalidade FROM autor ORDER BY id_autor ASC

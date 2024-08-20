@@ -2,7 +2,7 @@
 <project version="4">
   <component name="DataSourceManagerImpl" format="xml" multifile-model="true">
     <data-source source="LOCAL" name="meu_banco" uuid="99616aed-a393-4086-b802-da4fe5506fd1">
-      <driver-ref>sqlite.xerial</driver-ref>
+      <driver-ref>6fe3f576-ef63-455e-8d05-8e843d5b88ca</driver-ref>
       <synchronize>true</synchronize>
       <jdbc-driver>org.sqlite.JDBC</jdbc-driver>
       <jdbc-url>jdbc:sqlite:C:\Users\ian\Documents\.intellij\projetos-java\book-store\meu_banco.db</jdbc-url>
