@@ -30,8 +30,8 @@ public class AutorDAO extends BancoDAO{
         String sql = """
                 UPDATE autor SET nome = ?, nacionalidade = ? WHERE id_autor = ?
                 """;
-        try(Connection conexao = conexao();
-            PreparedStatement stat = conexao.prepareStatement(sql)){
+        try(Connection con = conexao();
+            PreparedStatement stat = con.prepareStatement(sql)){
             stat.setString(1, autor.getNome());
             stat.setString(2, autor.getNacionalidade());
             stat.setInt(3, autor.getId());
@@ -46,8 +46,8 @@ public class AutorDAO extends BancoDAO{
         String sql = """
                 DELETE FROM autor WHERE id_autor = ?
                 """;
-        try(Connection conexao = conexao();
-            PreparedStatement stat = conexao.prepareStatement(sql)){
+        try(Connection con = conexao();
+            PreparedStatement stat = con.prepareStatement(sql)){
             stat.setInt(1, autor.getId());
             stat.execute();
 
