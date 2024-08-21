@@ -3,6 +3,8 @@ import dao.LivroDAO;
 import entities.Autor;
 import entities.Livro;
 
+import java.util.Optional;
+
 public class Main {
     public static void main(String[] args) {
 
@@ -53,6 +55,14 @@ public class Main {
 
         // Listar livros
         for(Livro l : daoLivro.listar()){
+            System.out.println(l);
+        }
+
+        // ==================
+        System.out.println();
+
+        // Listar livros pelo Id
+        for(Livro l : daoLivro.listarPorId(2)){
             System.out.println(l);
         }
 

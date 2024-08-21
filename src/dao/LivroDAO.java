@@ -81,4 +81,29 @@ public class LivroDAO extends BancoDAO{
         }
         return lista;
     }
+
+    public List<Livro> listarPorId(int id) {
+        List<Livro> lista = new ArrayList<>();
+        String sql = """
+                SELECT id_livro, titulo, ano_publicacao, id_autor FROM livro WHERE id_autor = ? 
+                ORDER BY titulo ASC;
+                """;
+        try(Connection con = conexao();
+            PreparedStatement stat = con.prepareStatement(sql)){
+            stat.setInt(1, id);
+            ResultSet res = stat.executeQuery();
+            while(res.next()){
+                Livro livro = new Livro();
+                livro.setId(res.getInt("id_livro"));
+                livro.setTitulo(res.getString("titulo"));
+                livro.setAno(res.getInt("ano_publicacao"));
+                livro.setAutorId(res.getInt("id_autor"));
+                lista.add(livro);
+            }
+
+        } catch (SQLException e){
+            e.printStackTrace();
+        }
+        return lista;
+    }
 }
